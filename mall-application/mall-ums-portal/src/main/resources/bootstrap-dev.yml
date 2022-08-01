@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: mall-dev
+      config:
+        server-addr: localhost:8848
+        namespace: mall-dev
+        file-extension: yaml
+        group: DEFAULT_GROUP

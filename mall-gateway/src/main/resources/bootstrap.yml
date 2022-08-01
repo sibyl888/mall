@@ -1,0 +1,36 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' #打开endpoint
+spring:
+  application:
+    name: mall-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true  #gateway可以通过开启以下配置来打开根据服务的serviceId来匹配路由,默认是false大写
+          enabled: true # 是否可以通过其他服务的serviceId来转发到具体的服务实例。默认为false
+      routes:
+        ##会员服务
+        - id: mall-ums-portal
+          uri: lb://mall-ums-portal
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+        ##产品服务
+        - id: mall-pms-portal
+          uri: lb://mall-pms-portal
+          predicates:
+            - Path=/product/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 20000
+            connect-timeout: 20000
+
+logging:
+  level:
+    com.mall.gateway: debug

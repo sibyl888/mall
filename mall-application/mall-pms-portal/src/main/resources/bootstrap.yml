@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mall-pms-portal
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  auto-dialect:
