@@ -1,4 +1,4 @@
-package com.mall.user;
+package com.mall.user.service;
 
 
 import com.mall.common.Result;
