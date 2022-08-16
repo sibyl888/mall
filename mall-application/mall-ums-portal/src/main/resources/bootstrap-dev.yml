@@ -1,11 +1,36 @@
+#spring:
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#        namespace: mall-dev
+#      config:
+#        server-addr: localhost:8848
+#        namespace: mall-dev
+#        file-extension: yaml
+#        group: DEFAULT_GROUP
+server:
+  port: 9001
 spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-        namespace: mall-dev
-      config:
-        server-addr: localhost:8848
-        namespace: mall-dev
-        file-extension: yaml
-        group: DEFAULT_GROUP
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8&allowMultiQueries=true
+    username: root
+    password: 12345678
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+mybatis-plus:
+  mapperLocations: classpath*:com/mall/*/db/mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

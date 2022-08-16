@@ -1,7 +1,8 @@
 package com.mall.user.db.dao;
 
 import com.mall.user.model.entity.UserEntity;
-//import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 
 /**
@@ -12,6 +13,7 @@ import com.mall.user.model.entity.UserEntity;
  * @author sbn
  * @since 2022-08-11
  */
-public interface UserDao{ //extends BaseMapper<UserEntity> {
+@Mapper
+public interface UserDao extends BaseMapper<UserEntity> {
 
 }

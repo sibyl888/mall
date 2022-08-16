@@ -11,5 +11,10 @@
 
     <artifactId>mall-common</artifactId>
     <description>通用模块</description>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
 </project>
