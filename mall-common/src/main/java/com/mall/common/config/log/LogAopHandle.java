@@ -1,4 +1,4 @@
-package com.mall.config.log;
+package com.mall.common.config.log;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
 @Slf4j
 public class LogAopHandle extends BaseLogAspect {
 
-    @Pointcut("@annotation(com.mall.config.log.LogAnnotation)")
+    @Pointcut("@annotation(com.mall.common.config.log.LogAnnotation)")
     public void requestServer() {
     }
 

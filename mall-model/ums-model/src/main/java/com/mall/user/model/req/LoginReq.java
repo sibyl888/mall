@@ -23,7 +23,7 @@ public class LoginReq {
 
     @ApiModelProperty(value = "验证码")
     @NotBlank(message = "验证码不能为空")
-    @Pattern(regexp = "d{6}", message = "验证码格式不正确")
+    @Pattern(regexp = "[0-9]{6}", message = "验证码格式不正确")
     private String code;
 
 }

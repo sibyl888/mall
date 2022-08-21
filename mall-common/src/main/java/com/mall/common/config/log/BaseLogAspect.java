@@ -1,4 +1,4 @@
-package com.mall.config.log;
+package com.mall.common.config.log;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;

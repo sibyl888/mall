@@ -1,7 +1,6 @@
 package com.mall.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.mall.common.Result;
 import com.mall.common.enums.ResultEnum;
 import com.mall.common.utils.SnowflakeIdWorker;
@@ -31,11 +30,7 @@ public class LoginServiceImpl implements ILoginService {
 
     @Override
     public Result<UserVO> login(LoginReq loginReq) {
-        if (StringUtils.isBlank(loginReq.getPhone())) {
-            log.error("********手机号码没填，没校验住**************");
-            return Result.failed(ResultEnum.PARAM_ERROR.getCode(), String.format(ResultEnum.PARAM_ERROR.getMsg(), "，没校验住，手机号码必填"));
-        }
-        //check code
+        //check code TODO
         LambdaQueryWrapper<UserEntity> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(UserEntity::getMobile, loginReq.getPhone());
         UserEntity user = userDao.selectOne(queryWrapper);
