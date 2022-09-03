@@ -35,9 +35,6 @@ public class Result<T> implements Serializable {
     @ApiModelProperty(value = "耗时")
     private Long timeCost;
 
-    @ApiModelProperty(value = "数量")
-    private Integer count = 0;
-
     public static <T> Result<T> success() {
         return restResult(null, String.valueOf(ResultEnum.SUCCESS.getCode()), ResultEnum.SUCCESS.getMsg());
     }

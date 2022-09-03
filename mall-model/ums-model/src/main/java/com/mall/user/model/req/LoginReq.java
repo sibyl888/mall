@@ -15,11 +15,11 @@ import javax.validation.constraints.Pattern;
 @Data
 @ApiModel(value = "登录请求参数", description = "登录请求参数")
 public class LoginReq {
-    @ApiModelProperty(value = "手机号码")
+    @ApiModelProperty(value = "手机号码", required = true, example = "13716310000")
     @Pattern(regexp = "1\\d{10}", message = "手机号码格式不正确")
-    private String phone;
+    private String mobile;
 
-    @ApiModelProperty(value = "验证码")
+    @ApiModelProperty(value = "验证码", required = true, example = "666666")
     @Pattern(regexp = "[0-9]{6}", message = "验证码格式不正确")
     private String code;
 

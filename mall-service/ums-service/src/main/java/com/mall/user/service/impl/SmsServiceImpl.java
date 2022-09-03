@@ -68,6 +68,9 @@ public class SmsServiceImpl implements ISmsService {
      */
     @Override
     public boolean checkMsg(String mobile, String code) {
+        if (!smsProperties.getSendFlag() && Objects.equals(DEFAULT_SMS_CODE, code)) {
+            return true;
+        }
         String redisKey = RedisKeyConstants.PHONE_SMS_PREFIX + mobile;
         String smsCode = redisTemplate.opsForValue().get(redisKey);
         if (Objects.isNull(smsCode)) {

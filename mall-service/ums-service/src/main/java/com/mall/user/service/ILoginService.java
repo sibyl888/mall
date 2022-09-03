@@ -3,7 +3,7 @@ package com.mall.user.service;
 
 import com.mall.common.Result;
 import com.mall.user.model.req.LoginReq;
-import com.mall.user.model.vo.UserVO;
+import com.mall.user.model.vo.TokenVO;
 
 /**
  * @author sbn
@@ -15,5 +15,5 @@ public interface ILoginService {
      * @param loginReq 登录参数
      * @return 用户信息
      */
-    Result<UserVO> login(LoginReq loginReq);
+    Result<TokenVO> login(LoginReq loginReq);
 }

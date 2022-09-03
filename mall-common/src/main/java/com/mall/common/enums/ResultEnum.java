@@ -22,6 +22,9 @@ public enum ResultEnum implements IResult {
 
     LOGIN_ERROR("1100", "登录失败"),
     SEND_SMS_ERROR("1101", "发送短信失败"),
+    VALID_CODE_ERROR("1102", "验证码错误"),
+    LOGIN_PROHIBIT("1103", "禁止登录"),
+
 
     ;
 

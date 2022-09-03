@@ -13,7 +13,7 @@ import javax.validation.constraints.Pattern;
 @Data
 @ApiModel(value = "发送短信请求参数", description = "发送短信请求参数")
 public class SendSmsReq {
-    @ApiModelProperty(value = "手机号")
+    @ApiModelProperty(value = "手机号", required = true, example = "13716310000")
     @Pattern(regexp = "1[0-9]{10}", message = "请输入正确的手机号")
     private String mobile;
 }
