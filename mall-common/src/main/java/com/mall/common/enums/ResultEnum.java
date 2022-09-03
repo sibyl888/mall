@@ -21,6 +21,7 @@ public enum ResultEnum implements IResult {
     PARAM_ERROR("1001", "参数错误%s"),
 
     LOGIN_ERROR("1100", "登录失败"),
+    SEND_SMS_ERROR("1101", "发送短信失败"),
 
     ;
 

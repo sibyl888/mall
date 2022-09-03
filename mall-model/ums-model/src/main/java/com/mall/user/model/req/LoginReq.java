@@ -4,7 +4,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 /**
@@ -17,12 +16,10 @@ import javax.validation.constraints.Pattern;
 @ApiModel(value = "登录请求参数", description = "登录请求参数")
 public class LoginReq {
     @ApiModelProperty(value = "手机号码")
-    @NotBlank(message = "手机号码不能为空")
     @Pattern(regexp = "1\\d{10}", message = "手机号码格式不正确")
     private String phone;
 
     @ApiModelProperty(value = "验证码")
-    @NotBlank(message = "验证码不能为空")
     @Pattern(regexp = "[0-9]{6}", message = "验证码格式不正确")
     private String code;
 
